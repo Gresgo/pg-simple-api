@@ -1,0 +1,10 @@
+const main = process.cwd() + '/main/';
+const config = require(main + 'config');
+const app = require(main + 'app');
+const port = 1488;
+
+app.set('port', config.get('port'));
+
+const server = app.listen(app.get('port'), () => {
+    console.log(`Server listening on ${app.get('port')}`);
+})
